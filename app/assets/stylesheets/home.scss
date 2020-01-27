@@ -2,6 +2,19 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.body{
+	width: 100%;
+}
+
+.row {
+	margin-top: 50px;
+}
+
+
+
+.navbar-inverse{
+	margin-bottom: 20px;
+}
 
 header .navbar-left span{
 	color : #fff;
