@@ -1,5 +1,4 @@
 
-
 <header class="navbar navbar-fixed-top navbar-inverse">
   <div class="container">
     <nav class="nav navbar-nav navbar-left">
@@ -37,10 +36,10 @@
       <div class="row">
 <h2>Log in</h2>
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %><!--ユーザー認証を行なっている-->
   <div class="field">
     <%= f.label :name %><br />
-    <%= f.text_field :username %></div>
+    <%= f.text_field :name %></div>
 
   <div class="field">
     <%= f.label :password %><br />
