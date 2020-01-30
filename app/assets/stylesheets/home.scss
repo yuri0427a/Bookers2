@@ -15,10 +15,18 @@
 
 
 .navbar-inverse{
-	margin-bottom: 20px;
+	padding-bottom: -30px;
 }
 
 header .navbar-left span{
 	color : #fff;
 	font-size: 20px;
+}
+
+.field{
+	margin-bottom: 10px;
+}
+
+#error_explanation{
+	color: #ff0000;
 }

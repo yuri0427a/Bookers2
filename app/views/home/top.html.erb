@@ -1,29 +1,4 @@
-<header class="navbar navbar-fixed-top navbar-inverse">
-	<div class="container">
-		<nav class="nav navbar-nav navbar-left">
-            <span>Bookers</span>
-        </nav>
-		<nav>
-			<ul class="nav navbar-nav navbar-right">
-				<li><%=link_to "Home", root_path, class: "glyphicon glyphicon-home", style: "aria-hidden: true;" %>
-        </li>
 
-				<li><%=link_to "About", home_about_path, class: "glyphicon glyphicon-link", style: "aria-hidden: true;" %>
-			    </li>
-				<li><a href="/users/sign_up">
-                    <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
-                    sign up
-                    </a>
-                </li>
-				<li><a href="/users/sign_in">
-					<span class="glyphicon glyphicon-log-in" aria-hidden="true"></span>
-				    login
-				    </a>
-				</li>
-			</ul>
-		</nav>
-	</div>
-</header>
 <div class=body>
     <div class="container">
    	  <div class="row">
@@ -36,24 +11,16 @@
             <div class="btn-wrapper">
             	<div class="row">
             	   <p>
-                    <a href ="/users/sign_in">Login</a>
+                    <%= link_to "Login", new_user_session_path, class: "btn btn-info col-xs-10 col-xs-offset-1" %>
                 </p>
                 </div>
                 <div class="row">
                 <p>
-                    <a href ="/users/sign_up">Sign Up</a>
+                    <%= link_to "Sign up", new_user_registration_path, class: "btn btn-success col-xs-10 col-xs-offset-1" %>
                 </p>
                 </div>
        </div>  
     </div>
-  <footer>
-     <div class="container">
-        <div class="row">
-           <div class="col-xs-offset-9 ">
-	       <p>CopyRight Infratop.inc</p>
-        </div>
-     </div>
-  </footer>
 </div>
 </div>
 

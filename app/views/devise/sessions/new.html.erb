@@ -1,36 +1,4 @@
 
-<header class="navbar navbar-fixed-top navbar-inverse">
-  <div class="container">
-    <nav class="nav navbar-nav navbar-left">
-            <span>Bookers</span>
-        </nav>
-    <nav>
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="/">
-                    <span class="glyphicon glyphicon-home" aria-hidden="true"></span>
-                    Home
-                </a>
-                </li>
-
-        <li><a href="/home/about">
-          <span class="glyphicon glyphicon-link" aria-hidden="true"></span>
-            About
-            </a>
-          </li>
-        <li><a href="/users/sign_up">
-                    <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
-                    sign up
-                    </a>
-                </li>
-        <li><a href="/users/sign_in">
-          <span class="glyphicon glyphicon-log-in" aria-hidden="true"></span>
-            login
-            </a>
-        </li>
-      </ul>
-    </nav>
-  </div>
-</header>
 <div class=body>
     <div class="container">
       <div class="row">
@@ -39,7 +7,7 @@
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %><!--ユーザー認証を行なっている-->
   <div class="field">
     <%= f.label :name %><br />
-    <%= f.text_field :name %></div>
+    <%= f.text_field :name, autofocus: true %></div>
 
   <div class="field">
     <%= f.label :password %><br />
@@ -61,12 +29,3 @@
 </div>
 </div>
 </div>
-<footer>
-     <div class="container">
-        <div class="row">
-           <div class="col-xs-offset-9 ">
-         <p>CopyRight Infratop.inc</p>
-        </div>
-     </div>
-</div>
-</footer>
