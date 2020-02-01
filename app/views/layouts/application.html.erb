@@ -17,13 +17,26 @@
         </nav>
     <nav>
       <ul class="nav navbar-nav navbar-right">
+       <% if user_signed_in? %>
+        <li>
+          <%= link_to " Home", user_path(current_user.id), class: "glyphicon glyphicon-home" %>
+        </li>
+        <li>
+          <%= link_to " Users", "#", class: "glyphicon glyphicon-user" %>
+        </li>
+        <li>
+          <%= link_to " Books", "#", class: "glyphicon glyphicon-book" %>
+        </li>
+       <li>
+       <%= link_to " logout", destroy_user_session_path, class: "glyphicon glyphicon-log-out", method: :delete %>
+       </li>
+       <% else %>
         <li>
           <%= link_to " Home", root_path, class: "glyphicon glyphicon-home" %>
         </li>
 
         <li>
           <%= link_to " About", home_about_path, class: "glyphicon glyphicon-link" %>
-            </a>
           </li>
         <li>
           <%= link_to " sign up", new_user_registration_path, class: "glyphicon glyphicon-edit" %>
@@ -32,13 +45,14 @@
         <li>
           <%= link_to " Login", new_user_session_path, class: "glyphicon glyphicon-log-in" %>
         </li>
+        <% end %>
       </ul>
     </nav>
   </div>
 </header>
 <div class="body">
     <%= yield %>
-    <%= link_to "signout", destroy_user_session_path, method: :delete %>
+       
 </div>
 <footer>
      <div class="container">

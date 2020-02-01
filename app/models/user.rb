@@ -13,5 +13,5 @@ class User < ApplicationRecord
      false
     end
 
-    has_many :book, dependent: :destroy
+    has_many :books, dependent: :destroy
 end
