@@ -3,11 +3,20 @@
       <p id="notice"></p>
       <h2>User Info</h2>
       <%= form_for(@user) do |f| %>
+         <% if @user.errors.any? %>
+         <div id="error_explanation">
+             <h2><%= @user.errors.count %>errors prohibited this book from being saved:</h2>
+             <ul>
+             <% @user.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+                <% end %>
+                </ul>
+               </div>
+         <% end %>
         <div class="profile-container">
         <h4 class="profile-name">Name</h4><%= f.text_field :name %>
         <%= f.attachment_field :profile_image, placeholder: "プロフィール画像", class: "user-edit-form" %>
         <h4 class="profile-introduction">Introduction</h4><%= f.text_area :introduction %>
-       
         <%= f.submit "Update" %>
         </div>
     <% end %>
