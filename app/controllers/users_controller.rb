@@ -12,9 +12,12 @@ class UsersController < ApplicationController
      @book = Book.new
      @books = @user.books
   end
-
+  
   def edit
     @user = User.find(params[:id])
+    if @user.id != current_user.id
+      redirect_to user_path(current_user.id)
+    end
   end
   
   def update
@@ -24,6 +27,17 @@ class UsersController < ApplicationController
     else
       render :edit
     end
+
+    def ensure_correct_user
+
+      if @current_user.id !=  params[:id].to_i
+    
+       redirect_to("/posts/index")
+    
+      end
+    
+    end
+
   end
   private
   def user_params
