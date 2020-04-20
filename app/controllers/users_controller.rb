@@ -1,10 +1,11 @@
 class UsersController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_user! #ログインユーザ本人ーのみ操作可能
 
   def index
     @books= Book.where(user_id: current_user.id)
-    @book= Book.new
-    @user =current_user
+    @book= Book.new       #空のモデルを渡すため（新規投稿メソッド）
+    @user =current_user   #部分テンプレート
+                          #current_userは定義しなくても呼び出せる
     @users= User.all
   end
 
@@ -32,6 +33,7 @@ class UsersController < ApplicationController
 
   end
   private
+  #データの編集、更新を許可するためのもの
   def user_params
     params.require(:user).permit(:name, :introduction, :profile_image)  
   end
